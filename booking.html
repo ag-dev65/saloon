@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Appointment | Glow & Glam Beauty Salon</title>
+    <meta
+      name="description"
+      content="Book your salon appointment at Glow & Glam Beauty Salon. Choose a service, set your preferred date and time, and submit your booking request."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="Glow & Glam home">
+          <span class="brand-mark">G</span>
+          <span>Glow &amp; Glam</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="booking.html" class="active">Booking</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="appointments.html">Appointments</a>
+        </nav>
+
+        <a href="booking.html" class="btn btn-primary nav-button">Book Now</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero small-hero">
+        <div class="container reveal">
+          <p class="eyebrow">Book Your Appointment</p>
+          <h1>Reserve your perfect beauty treatment</h1>
+        </div>
+      </section>
+
+      <section class="section booking-section">
+        <div class="container booking-layout">
+          <div class="booking-info reveal">
+            <h2>Let’s create your beauty moment</h2>
+            <p>
+              Share your preferences and we’ll confirm the best available slot for your chosen service.
+            </p>
+            <ul class="info-list">
+              <li>✔ Personalized service recommendations</li>
+              <li>✔ Flexible booking times</li>
+              <li>✔ Friendly salon support</li>
+            </ul>
+          </div>
+
+          <div class="booking-card reveal">
+            <form id="bookingForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
+                </div>
+
+                <div class="field">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="e.g. +234 801 234 5678" required />
+                </div>
+
+                <div class="field full-width">
+                  <label for="emailAddress">Email Address</label>
+                  <input type="email" id="emailAddress" name="emailAddress" placeholder="you@example.com" required />
+                </div>
+
+                <div class="field full-width">
+                  <label for="serviceName">Select Service</label>
+                  <select id="serviceName" name="serviceName" required>
+                    <option value="">Choose a service</option>
+                    <option>Hair Styling</option>
+                    <option>Braiding</option>
+                    <option>Hair Treatment</option>
+                    <option>Manicure</option>
+                    <option>Pedicure</option>
+                    <option>Makeup</option>
+                    <option>Facial Treatment</option>
+                    <option>Wig Installation</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="preferredDate">Preferred Date</label>
+                  <input type="date" id="preferredDate" name="preferredDate" required />
+                </div>
+
+                <div class="field">
+                  <label for="preferredTime">Preferred Time</label>
+                  <input type="time" id="preferredTime" name="preferredTime" required />
+                </div>
+
+                <div class="field full-width">
+                  <label for="additionalMessage">Additional Message</label>
+                  <textarea id="additionalMessage" name="additionalMessage" rows="5" placeholder="Tell us about your preferred style, event, or any special requests..."></textarea>
+                </div>
+              </div>
+
+              <p id="formMessage" class="form-message" aria-live="polite"></p>
+              <button type="submit" class="btn btn-primary form-submit">Confirm Booking</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="brand footer-brand">
+            <span class="brand-mark">G</span>
+            <span>Glow &amp; Glam</span>
+          </a>
+          <p>Your trusted beauty studio for radiant, confidence-boosting care.</p>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>18 Elegance Road, Lekki Phase 1</li>
+            <li>+234 803 456 7890</li>
+            <li>hello@glowandglam.com</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Follow Us</h3>
+          <ul class="social-links">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Glow &amp; Glam Beauty Salon. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="bookingModal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close" type="button" aria-label="Close confirmation">×</button>
+        <p class="modal-tag">Booking Confirmed!</p>
+        <h3 id="modalTitle">Thank you!</h3>
+        <p id="modalMessage"></p>
+        <p class="reference-row">
+          <strong>Booking Reference:</strong>
+          <span id="bookingReference"></span>
+        </p>
+        <a href="appointments.html" class="btn btn-primary">View Appointments</a>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

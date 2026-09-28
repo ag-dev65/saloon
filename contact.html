@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Glow & Glam Beauty Salon</title>
+    <meta
+      name="description"
+      content="Contact Glow & Glam Beauty Salon for appointments, personalized beauty consultations, and support for your salon booking needs."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="Glow & Glam home">
+          <span class="brand-mark">G</span>
+          <span>Glow &amp; Glam</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="booking.html">Booking</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="active">Contact</a>
+          <a href="appointments.html">Appointments</a>
+        </nav>
+
+        <a href="booking.html" class="btn btn-primary nav-button">Book Now</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero small-hero">
+        <div class="container reveal">
+          <p class="eyebrow">Contact Us</p>
+          <h1>We would love to hear from you</h1>
+        </div>
+      </section>
+
+      <section class="section contact-section">
+        <div class="container contact-grid">
+          <div class="contact-card reveal">
+            <h2>Send us a message</h2>
+            <form id="contactForm" class="contact-form">
+              <div class="field">
+                <label for="contactName">Full Name</label>
+                <input type="text" id="contactName" name="contactName" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" name="contactEmail" placeholder="you@example.com" required />
+              </div>
+              <div class="field">
+                <label for="contactSubject">Subject</label>
+                <input type="text" id="contactSubject" name="contactSubject" placeholder="How can we help?" required />
+              </div>
+              <div class="field">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" name="contactMessage" rows="5" placeholder="Tell us more..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+
+          <div class="contact-details reveal">
+            <h2>Visit our salon</h2>
+            <ul>
+              <li><strong>Address:</strong> 18 Elegance Road, Lekki Phase 1, Lagos</li>
+              <li><strong>Phone:</strong> +234 803 456 7890</li>
+              <li><strong>Email:</strong> hello@glowandglam.com</li>
+              <li><strong>Hours:</strong> Tuesday - Sunday, 9:00 AM - 8:00 PM</li>
+            </ul>
+            <div class="map-box">
+              <p>Beauty care, style inspiration, and confidence-building moments await.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="brand footer-brand">
+            <span class="brand-mark">G</span>
+            <span>Glow &amp; Glam</span>
+          </a>
+          <p>Your trusted beauty studio for radiant, confidence-boosting care.</p>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>18 Elegance Road, Lekki Phase 1</li>
+            <li>+234 803 456 7890</li>
+            <li>hello@glowandglam.com</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Follow Us</h3>
+          <ul class="social-links">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Glow &amp; Glam Beauty Salon. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

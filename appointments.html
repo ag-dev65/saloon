@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointments Dashboard | BISHOP BARBING Salon</title>
+    <meta
+      name="description"
+      content="Salon staff dashboard to review, confirm, complete, and remove bookings in localStorage for BISHOP BARBING Salon."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="BISHOP BARBING Salon home">
+          <span class="brand-mark">B</span>
+          <span>BISHOP BARBING Salon</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="booking.html">Booking</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="appointments.html" class="active">Appointments</a>
+        </nav>
+
+        <a href="booking.html" class="btn btn-primary nav-button">Book Now</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero small-hero">
+        <div class="container reveal">
+          <p class="eyebrow">Appointments Dashboard</p>
+          <h1>Manage salon bookings</h1>
+        </div>
+      </section>
+
+      <section class="section dashboard-section">
+        <div class="container">
+          <div class="dashboard-card reveal">
+            <div class="dashboard-header">
+              <h2>Bookings</h2>
+              <span id="bookingCount" class="booking-count">0 records</span>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Phone</th>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Reference</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="appointmentsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="brand footer-brand">
+            <span class="brand-mark">B</span>
+            <span>BISHOP BARBING Salon</span>
+          </a>
+          <p>Your trusted beauty studio for radiant, confidence-boosting care.</p>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>18 Elegance Road, Lekki Phase 1</li>
+            <li>+234 803 456 7890</li>
+            <li>hello@glowandglam.com</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Follow Us</h3>
+          <ul class="social-links">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 BISHOP BARBING Salon. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
