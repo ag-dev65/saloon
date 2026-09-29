@@ -1,5 +1,32 @@
 // Shared site behavior for all pages.
 const STORAGE_KEY = 'bishoptBarbingBookings';
+const API_BASE_URL = window.API_BASE_URL || (
+  window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:3000'
+    : 'https://saloon-cobf.onrender.com'
+);
+
+async function submitBookingToBackend(booking) {
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/bookings`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(booking),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error || 'Booking request failed.');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.warn('Backend submission failed, falling back to localStorage:', error.message);
+    return null;
+  }
+}
 
 function parseBookings() {
   try {
@@ -199,7 +226,7 @@ function initBookingForm() {
   injectSelectedService();
   setMinDate();
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const validationMessage = validateBookingForm(form);
@@ -208,7 +235,6 @@ function initBookingForm() {
       return;
     }
 
-    const existingBookings = parseBookings();
     const booking = {
       id: Date.now(),
       reference: generateBookingReference(),
@@ -223,6 +249,14 @@ function initBookingForm() {
       createdAt: new Date().toISOString(),
     };
 
+    const backendResult = await submitBookingToBackend(booking);
+
+    if (backendResult && backendResult.success) {
+      booking.reference = backendResult.reference || booking.reference;
+      booking.status = backendResult.status || booking.status;
+    }
+
+    const existingBookings = parseBookings();
     existingBookings.push(booking);
     saveBookings(existingBookings);
 
